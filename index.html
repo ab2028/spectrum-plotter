@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spectrum Plotter</title>
+  <style>
+    body { background: black; color: white; font-family: sans-serif; text-align: center; }
+    #spectrum { border: 1px solid white; margin-top: 20px; }
+    input { width: 300px; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Emission Spectrum Plotter</h1>
+  <p>Enter wavelengths (nm), separated by spaces:</p>
+  <input id="input" type="text" placeholder="e.g. 639 536 468">
+  <button onclick="plotSpectrum()">Plot</button>
+  <br>
+  <canvas id="spectrum" width="800" height="200"></canvas>
+  
+  <script src="script.js"></script>
+</body>
+</html>
