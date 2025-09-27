@@ -6,17 +6,39 @@
   <style>
     body { background: black; color: white; font-family: sans-serif; text-align: center; }
     #spectrum { border: 1px solid white; margin-top: 20px; }
-    input { width: 300px; padding: 5px; }
+    input { width: 300px; padding: 5px; margin: 5px 0; }
   </style>
 </head>
 <body>
   <h1>Emission Spectrum Plotter</h1>
-  <p>Enter wavelengths (nm), separated by spaces:</p>
-  <input id="input" type="text" placeholder="e.g. 639 536 468">
-  <button onclick="plotSpectrum()">Plot</button>
-  <br>
-  <canvas id="spectrum" width="800" height="200"></canvas>
+
+  <!-- Inputs (unchanged) -->
+<p>Enter your measured wavelengths (nm), separated by spaces:</p>
+<input id="input1" type="text" placeholder="e.g. 639 536 468">
+
+<p>Compare to:</p>
+<div id="gas-buttons">
+  <button type="button" onclick="fillComparison('He')">He</button>
+  <button type="button" onclick="fillComparison('Ne')">Ne</button>
+  <button type="button" onclick="fillComparison('Ar')">Ar</button>
+  <button type="button" onclick="fillComparison('Kr')">Kr</button>
+  <button type="button" onclick="fillComparison('Xe')">Xe</button>
+</div>
+
+<input id="input2" type="text" placeholder="Enter comparison wavelengths">
+
+
+<br>
+<button onclick="plotSpectrum()">Plot</button>
+
+<!-- Two canvas outputs -->
+<p>Your measured wavelengths:</p>
+<canvas id="spectrum1" width="800" height="200" style="border:1px solid white"></canvas>
+<p>Comparison wavelengths:</p>
+<canvas id="spectrum2" width="800" height="200" style="border:1px solid white"></canvas>
+
+
   
   <script src="script.js"></script>
 </body>
-</html>
+</html> 
