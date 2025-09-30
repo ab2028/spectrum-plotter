@@ -67,6 +67,22 @@ function parseWavelengths(input) {
   return wavelengths;
 }
 
+// Known comparison spectra (nm)
+const gasSpectra = {
+  He: "388 447 471 492 501 587 668 706",
+  Ne: "585 588 594 602 607 616 633 640 650 659 692 703 717 741",
+  Ar: "415 419 425 442 451 458 480 487 518 521 549 554 565 603 617 675",
+  Kr: "427 436 446 468 476 482 520 531 557 568 586 605 758",
+  Xe: "420 433 446 462 467 484 492 502 529 541 547 555 570 582 597 603 616 823"
+};
+
+// Fill comparison input with chosen gas lines
+function fillComparison(gas) {
+  if (gasSpectra[gas]) {
+    document.getElementById("input2").value = gasSpectra[gas];
+  }
+}
+
 // Draw spectrum lines
 function plotSpectrum() {
   const canvas1 = document.getElementById("spectrum1");
