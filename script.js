@@ -124,3 +124,7 @@ function plotSpectrum() {
     ctx2.stroke();
   });
 }
+
+// Make functions accessible to inline onclick
+window.fillComparison = fillComparison;
+window.plotSpectrum = plotSpectrum;
